@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://dl.bintray.com/palantir/releases"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.palantir:gradle-flexversion:0.4.0'
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "java"
+apply plugin: 'gradle-flexversion'
+apply from: "\$rootDir/gradle/setup.gradle"
+
+group "${config.groupName}"
+description = "${config.description}"
+version flexVersion()
+
+dependencies {
+    compile ("com.google.guava:guava:18.0")
+}
