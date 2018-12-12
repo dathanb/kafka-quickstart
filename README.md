@@ -1,6 +1,6 @@
-# gradle-template
-A template to make bootstrapping new Gradle-based projects easy.
+# Kafka Quickstart
+Minimal-ish project for developing against Kafka locally.
 
-Note that LICENSE applies to my work in this template. The LICENSE file will be removed by the initialization script,
-so as not to accidentally apply an unintended license to the resulting project.
+Heavily inspired by https://www.devglan.com/apache-kafka/apache-kafka-java-example
 
+Expects the kafka image from https://github.com/dathanb/docker-kafka to be available under the tag `kafka:latest`

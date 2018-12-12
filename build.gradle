@@ -17,12 +17,12 @@ repositories {
 
 apply plugin: "java"
 apply plugin: 'gradle-flexversion'
-apply from: "\$rootDir/gradle/setup.gradle"
+apply from: "$rootDir/gradle/setup.gradle"
 
-group "${config.groupName}"
-description = "${config.description}"
+group "dathanb"
+description = "Kafka quickstart project"
 version flexVersion()
 
 dependencies {
-    compile ("com.google.guava:guava:18.0")
+    compile 'org.apache.kafka:kafka_2.11:0.10.1.0'
 }
