@@ -19,15 +19,11 @@ public class Producer {
         properties.put(ProducerConfig.LINGER_MS_CONFIG, 1000);
         properties.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 5000);
 
-
-
         try (KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(properties)) {
             System.out.println(kafkaProducer.partitionsFor("kafka-test"));
             for (int i = 0; i < 1000; i++) {
                 System.out.println(i);
-                var metadataFuture = kafkaProducer.send(new ProducerRecord<>("kafka-test", 0, null, "test message - " + i), callback());
-                System.out.println(metadataFuture.get().partition());
-                Thread.sleep(1000);
+                kafkaProducer.send(new ProducerRecord<>("kafka-test", 0, null, "test message - " + i), callback());
             }
         } catch (Exception e) {
             e.printStackTrace();
